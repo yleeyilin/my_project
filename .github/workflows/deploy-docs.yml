@@ -25,7 +25,7 @@ jobs:
 
       - name: Generate Sphinx Documentation
         run: |
-          python generate_sphinx_docs.py
+          python generate_docs.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
