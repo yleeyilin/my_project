@@ -29,5 +29,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: | 
-          ghp-import -n -p -f docs/build
+          ghp-import -n -p -f docs/build --no-jekyll
 
