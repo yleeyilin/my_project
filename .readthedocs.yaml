@@ -9,7 +9,7 @@ build:
     python: "3.12"
   commands:
     - echo "Skipping documentation build since HTML is pre-generated"
-    - cp -r $(pwd)/docs/build/ $READTHEDOCS_OUTPUT/html/
+    - cp -r docs/build/ $READTHEDOCS_OUTPUT/
 
 sphinx:
   configuration: docs/source/conf.py
