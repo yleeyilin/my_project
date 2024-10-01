@@ -25,14 +25,11 @@ build:
 python:
   install:
     - requirements: docs/requirements.txt
-
-formats:
-  - html
-
+  
 # Optionally build your docs in additional formats such as PDF and ePub
-# formats:
-#   - pdf
-#   - epub
+formats:
+  - pdf
+  - epub
 
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
