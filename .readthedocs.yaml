@@ -12,7 +12,7 @@ build:
     - cp -r docs/build/ $READTHEDOCS_OUTPUT/html/
 
 sphinx:
-  configuration: false
+  configuration: "false"
 
 python:
   install:
