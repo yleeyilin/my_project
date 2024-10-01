@@ -25,8 +25,8 @@ This script automates the generation of Sphinx documentation for Python packages
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_directory>
+   git clone git@github.com:yleeyilin/sphinx_generation.git
+   cd my_package
    ```
 
 2. Ensure you have the necessary dependencies installed:
