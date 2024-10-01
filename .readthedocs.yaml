@@ -10,8 +10,7 @@ build:
   commands:
     - echo "Skipping documentation build since HTML is pre-generated"
     - mkdir -p $READTHEDOCS_OUTPUT/html/
-    - cp docs/build/index.html .
-    - cp -r docs/build/ $READTHEDOCS_OUTPUT/html
+    - cp docs/build/index.html $READTHEDOCS_OUTPUT/html/
 
 sphinx:
   configuration: docs/source/conf.py
