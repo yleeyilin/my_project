@@ -13,6 +13,7 @@ def generate_sphinx_docs(package_name, source_dir="docs/source", build_dir="docs
     os.makedirs(build_dir, exist_ok=True)
 
     conf_py_path = os.path.join(source_dir, "conf.py")
+
     if not os.path.exists(conf_py_path):
         print("Creating conf.py...")
         with open(conf_py_path, "w") as f:
@@ -48,7 +49,7 @@ html_static_path = ['./docs/build/_static']
     ]
     subprocess.run(sphinx_apidoc_cmd, check=True)
 
-    # Creates index.rst
+    # Generates index.rst
     index_rst = os.path.join(source_dir, "index.rst")
     if not os.path.exists(index_rst):
         print("Creating index.rst...")
@@ -64,7 +65,7 @@ html_static_path = ['./docs/build/_static']
    {package_name}
 """)
             
-    # Create my_package.rst with dynamic toctree entries
+    # Generates my_package.rst with dynamic toctree entries
     my_package_rst_path = os.path.join(source_dir, f"{package_name}.rst")
     print(f"Creating {package_name}.rst...")
     with open(my_package_rst_path, "w") as f:
