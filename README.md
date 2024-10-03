@@ -80,11 +80,3 @@ def generate_sphinx_docs(package_name, source_dir="docs/source", build_dir="docs
 ## Output
 
 Upon successful execution, the generated HTML documentation will be located in the `docs/build` directory by default.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
