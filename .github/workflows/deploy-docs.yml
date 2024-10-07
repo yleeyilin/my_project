@@ -26,6 +26,16 @@ jobs:
       - name: Generate Sphinx Documentation
         run: |
           python generate_docs.py
+      
+      - name: Commit and push generated docs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -f docs/_build/html
+          git commit -m "Deploy Sphinx documentation"
+          git push -f origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to GitHub Pages
         run: | 
