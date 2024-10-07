@@ -13,7 +13,6 @@ def generate_sphinx_docs(package_name, source_dir="docs/source", build_dir="docs
     os.makedirs(build_dir, exist_ok=True)
 
     conf_py_path = os.path.join(source_dir, "conf.py")
-
     if not os.path.exists(conf_py_path):
         print("Creating conf.py...")
         with open(conf_py_path, "w") as f:
@@ -21,10 +20,10 @@ def generate_sphinx_docs(package_name, source_dir="docs/source", build_dir="docs
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../')) 
-# Configuration file for the Sphinx documentation builder.
 
+# Configuration file for the Sphinx documentation builder.
 project = '{package_name}'
-author = 'The Author's Name'
+author = 'QuantumDiamonds'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
@@ -59,13 +58,13 @@ html_static_path = ['./docs/build/_static']
 ============================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 30
    :caption: Contents:
 
    {package_name}
 """)
             
-    # Generates my_package.rst with dynamic toctree entries
+    # Generates and overwrites my_package.rst dynamically
     my_package_rst_path = os.path.join(source_dir, f"{package_name}.rst")
     print(f"Creating {package_name}.rst...")
     with open(my_package_rst_path, "w") as f:
@@ -77,7 +76,7 @@ Submodules
 ----------
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 30
 
 """)
             
