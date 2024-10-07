@@ -31,7 +31,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -f docs/_build/html
+          git add -f docs/build/
           git commit -m "Deploy Sphinx documentation"
           git push -f origin main
         env:
