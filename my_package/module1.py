@@ -4,6 +4,7 @@
 def hello_world() -> str:
     """
     do the usual 'hello world'
+    update string
 
     :return: Hello World
     :rtype: String
