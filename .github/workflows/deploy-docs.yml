@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: 3.x  
 
-      - name: Install dependencies
+      - name: Install dependencies to generate docs
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
@@ -32,6 +32,25 @@ jobs:
       - name: Generate Sphinx Documentation
         run: |
           python generate_docs.py
+      
+      - name: Create auto-docs branch
+        run: |
+          git checkout main
+          git pull origin main
+          git branch -D auto-docs || true
+          git checkout -b auto-docs
+  
+      - name: Add Generated Documentation
+        run: |
+          git add docs/build 
+        
+      - name: Commit Changes
+        run: |
+          git diff --quiet || git commit -m "Add sphinx documentation"
+
+      - name: Push Branch
+        run: |
+          git push origin auto-docs
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
@@ -43,8 +62,9 @@ jobs:
             [create-pull-request](https://github.com/peter-evans/create-pull-request).
           title: 'Merge Sphinx Documentation'
           labels: automated pr
-          branch: gh-pages-test
+          branch: auto-docs
           base: main
+
       - name: Deploy to GitHub Pages
         run: | 
           ghp-import -n -p -f docs/build --no-jekyll
