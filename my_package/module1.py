@@ -44,3 +44,13 @@ def greeter_msg_3(*, greeter: str) -> str:
     """
     return f"Hello to you from {greeter}"
 
+def greeter_msg_4(*, greeter: str) -> str:
+    """
+    Custom greeting 4
+
+    :param greeter: name of a person who message will be from
+    :type greeter: str
+    :return: a greeting from thmakee greeter
+    :rtype: str
+    """
+    return f"Hello to you from {greeter}"
