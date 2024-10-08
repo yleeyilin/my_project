@@ -44,8 +44,7 @@ jobs:
           title: 'Merge Sphinx Documentation'
           labels: automated pr
           branch: gh-pages-test
-
-
+          base: main
       - name: Deploy to GitHub Pages
         run: | 
           ghp-import -n -p -f docs/build --no-jekyll
