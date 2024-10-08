@@ -27,3 +27,12 @@ class Car:
         :rtype: str tuple
         """
         return self.make, self.model    
+    
+    def get_car3(self):
+        """
+        Getter for carr
+
+        :return: make and model
+        :rtype: str tuple
+        """
+        return self.make, self.model    
