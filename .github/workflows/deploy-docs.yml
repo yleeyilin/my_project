@@ -45,7 +45,7 @@ jobs:
 
       - name: Add Generated Documentation
         run: |
-          git add docs/build 
+          git add --all
       
       - name: Commit Changes
         run: |
