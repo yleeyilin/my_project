@@ -52,7 +52,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          
+
+          git rm -r --cached **/__pycache__|| true
           if ! git diff --quiet --exit-code -- ':!__pycache__'; then
             git commit -m "Add sphinx documentation"
           else
