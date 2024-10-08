@@ -28,10 +28,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Generate Sphinx Documentation
-        run: |
-          python generate_docs.py
       
       - name: Create unique auto-documentation branch
         id: branch_name
@@ -42,6 +38,10 @@ jobs:
           git pull origin main
           git branch -D "${BRANCH_NAME}" || true
           git checkout -b "${BRANCH_NAME}"
+
+      - name: Generate Sphinx Documentation
+        run: |
+          python generate_docs.py
 
       - name: Add Generated Documentation
         run: |
