@@ -50,10 +50,10 @@ html_static_path = ['./docs/build/_static']
 
     # Generates index.rst
     index_rst = os.path.join(source_dir, "index.rst")
-    if not os.path.exists(index_rst):
-        print("Creating index.rst...")
-        with open(index_rst, "w") as f:
-            f.write(f"""
+
+    print("Creating index.rst...")
+    with open(index_rst, "w") as f:
+        f.write(f"""
 {package_name} Documentation
 ============================
 
