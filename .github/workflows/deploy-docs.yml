@@ -52,6 +52,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
+          git rm docs/build/.doctrees/environment.pickle
           git rm -r --cached **/__pycache__|| true
           git diff --quiet || git commit -m "Add sphinx documentation"
 
