@@ -50,6 +50,7 @@ jobs:
 
       - name: Push Branch
         run: |
+          git pull origin main
           git push origin auto-docs
 
       - name: Create Pull Request
