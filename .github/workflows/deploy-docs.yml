@@ -46,7 +46,6 @@ jobs:
       - name: Add Generated Documentation
         run: |
           git add docs/build 
-          git rm -r --cached __pycache__
         
       - name: Commit Changes
         run: |
