@@ -47,6 +47,10 @@ jobs:
       - name: Commit Changes
         run: |
           git diff --quiet || git commit -m "Add sphinx documentation"
+          
+      - name: Pull remote changes
+        run: |
+          git pull origin auto-documentation || echo "No changes to pull"
 
       - name: Push Branch
         run: |
