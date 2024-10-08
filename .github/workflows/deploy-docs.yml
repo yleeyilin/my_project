@@ -51,7 +51,11 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git diff --quiet || git commit -m "Add sphinx documentation"
+          if ! git diff --quiet --exit-code -- ':!__pycache__'; then
+            git commit -m "Add sphinx documentation"
+          else
+            echo "No relevant changes to commit."
+          fi
           
       - name: Pull remote changes (if any)
         run: |
